@@ -1,0 +1,5 @@
+Name: shimona, Address: priya, Phone: 12345
+Name: shravani, Address: hsrama, Phone: 1234
+Name: shravani, Address: nanded, Phone: 89276222
+Name: drishti, Address: bangalore, Phone: 23455
+Name: falguni, Address: mumbai, Phone: 211111
