@@ -47,7 +47,7 @@ void finalbill(char names[][n], float cost[], int quantities[], int Products, ch
 }*/
 
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include "grocery.h"
 
@@ -94,4 +94,25 @@ void finalbill(struct Product products[], int quantities[], int numProducts, cha
     printf("GST (9%%): Rs%.2f\n", gstaddition);
     printf("Total amount (with GST): Rs%.2f\n", totalAmount);
     printf("Thank You, Visit Again!\n");
+}*/
+
+
+//updated code
+#include <stdio.h>
+#include <stdlib.h>
+#include "grocery.h"
+
+void choose(struct Product products[], int numProducts) {
+    printf("\nAvailability:\n");
+    for (int i = 0; i < numProducts; ++i) {
+        printf("%d %s - Rs%.2f\n", i+1, products[i].name, products[i].price);
+    }
+}
+
+float total(struct Product products[], int quantities[], int numProducts) {
+    float total = 0;
+    for (int i = 0; i < numProducts; i++) {
+        total += products[i].price * quantities[i];
+    }
+    return total;
 }
