@@ -116,3 +116,34 @@ float total(struct Product products[], int quantities[], int numProducts) {
     }
     return total;
 }
+
+
+void finalbill(struct Product products[], int quantities[], int numProducts, char Name[], char Address[], char Phonenumber[]) {
+    float subtotal = 0;
+
+    printf("\tGROCERGO\t\n");
+    printf("-----------------------------------------\n");
+    printf("\nWelcome!\n");
+    printf("-----------------------------------------\n");
+    printf("\nCustomer Details:\n");
+    printf("Name: %s\n", Name);
+    printf("Address: %s\n", Address);
+    printf("Phone number : %s\n", Phonenumber);
+
+    printf("-----------------------------------------\n");
+    printf("%-20s%-10s%-10s\n", "Product", "Price", "Quantity");
+    printf("-----------------------------------------\n");
+    for (int i = 0; i < numProducts; ++i) {
+        if (quantities[i] > 0) {
+            printf("%-20sRs%-9.2f%-10d\n", products[i].name, products[i].price, quantities[i]);
+            subtotal += products[i].price * quantities[i];
+        }
+    }
+    printf("-----------------------------------------\n");
+    float gstaddition = subtotal * GST;
+    float totalAmount = subtotal + gstaddition;
+    printf("Subtotal: Rs%.2f\n", subtotal);
+    printf("GST (9%%): Rs%.2f\n", gstaddition);
+    printf("Total amount (with GST): Rs%.2f\n", totalAmount);
+    printf("Thank You, Visit Again!\n");
+}             
